@@ -16,4 +16,13 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DbInitilizer\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\asprule1020.Models\asprule1020.Models.csproj" />
+  </ItemGroup>
+
 </Project>
