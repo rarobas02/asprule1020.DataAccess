@@ -11,6 +11,10 @@ namespace asprule1020.DataAccess.Repository.IRepository
     public interface IUnitOfWork
     {
         IRegisterRepository Register { get; }
+        IRegionRepository Region { get; }
+        IProvinceRepository Province { get; }  
+        ICityMunRepository CityMunicipality { get; }
+        IBarangayRepository Barangay { get; }
         void Save();
     }
 }
