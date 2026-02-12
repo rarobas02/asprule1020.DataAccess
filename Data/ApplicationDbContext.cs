@@ -15,6 +15,7 @@ namespace asprule1020.DataAccess.Data
         public DbSet<PhProvDist> PhProvDists { get; set; }
         public DbSet<PhCityMun> PhCityMuns { get; set; }
         public DbSet<PhBarangay> PhBarangays { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
     }
 }
