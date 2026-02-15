@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace asprule1020.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIdentityToDb : Migration
+    public partial class AddPEZAinputInDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -62,6 +62,7 @@ namespace asprule1020.DataAccess.Migrations
                     EstSECNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EstSECDateIssued = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EstBisPermitNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    EstIsPeza = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstBisPermitDateIssued = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstBisPermitValidityDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstOwnerValidIDNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -71,21 +72,21 @@ namespace asprule1020.DataAccess.Migrations
                     EstSECFile = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstBisPermitFile = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstOwnerValidIDFile = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstEvalName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstEvalDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EstEvalRemarks = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstPoHeadName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstPoHeadEvalDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstPoHeadRemarks = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstEvalEmailSendStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstReopeningDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EstReasonForUpdate = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstIsUpdating = table.Column<bool>(type: "bit", nullable: false),
-                    EstIsEmailApprovedSent = table.Column<bool>(type: "bit", nullable: false),
+                    EstEvalName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstEvalDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    EstEvalRemarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstPoHeadName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstPoHeadEvalDate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstPoHeadRemarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstEvalEmailSendStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstReopeningDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    EstReasonForUpdate = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EstIsUpdating = table.Column<bool>(type: "bit", nullable: true),
+                    EstIsEmailApprovedSent = table.Column<bool>(type: "bit", nullable: true),
                     EstEmailApprovedSentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EstIsEmailReapplicationSent = table.Column<bool>(type: "bit", nullable: false),
-                    EstEmailReapplicationSentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EstEvalAssinged = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EstIsEmailReapplicationSent = table.Column<bool>(type: "bit", nullable: true),
+                    EstEmailReapplicationSentDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    EstEvalAssinged = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstRegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -266,8 +267,8 @@ namespace asprule1020.DataAccess.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -311,8 +312,8 @@ namespace asprule1020.DataAccess.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

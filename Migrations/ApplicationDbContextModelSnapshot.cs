@@ -102,12 +102,10 @@ namespace asprule1020.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -144,12 +142,10 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -476,38 +472,38 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<DateTime>("EstEmailApprovedSentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EstEmailReapplicationSentDate")
+                    b.Property<DateTime?>("EstEmailReapplicationSentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstEvalAssinged")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EstEvalDate")
+                    b.Property<DateTime?>("EstEvalDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstEvalEmailSendStatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstEvalName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstEvalRemarks")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EstFemaleCount")
                         .HasColumnType("int");
 
-                    b.Property<bool>("EstIsEmailApprovedSent")
+                    b.Property<bool?>("EstIsEmailApprovedSent")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("EstIsEmailReapplicationSent")
+                    b.Property<bool?>("EstIsEmailReapplicationSent")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("EstIsUpdating")
+                    b.Property<string>("EstIsPeza")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("EstIsUpdating")
                         .HasColumnType("bit");
 
                     b.Property<string>("EstLegalOrg")
@@ -568,15 +564,12 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("nvarchar(11)");
 
                     b.Property<string>("EstPoHeadEvalDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstPoHeadName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstPoHeadRemarks")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstProvince")
@@ -584,7 +577,6 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstReasonForUpdate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstRegion")
@@ -594,7 +586,7 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<DateTime>("EstRegistrationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EstReopeningDate")
+                    b.Property<DateTime?>("EstReopeningDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EstSECDateIssued")
