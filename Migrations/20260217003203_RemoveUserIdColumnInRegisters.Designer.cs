@@ -12,8 +12,8 @@ using asprule1020.DataAccess.Data;
 namespace asprule1020.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260214122250_AddPEZAinputInDb")]
-    partial class AddPEZAinputInDb
+    [Migration("20260217003203_RemoveUserIdColumnInRegisters")]
+    partial class RemoveUserIdColumnInRegisters
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -502,9 +502,8 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<bool?>("EstIsEmailReapplicationSent")
                         .HasColumnType("bit");
 
-                    b.Property<string>("EstIsPeza")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("EstIsPeza")
+                        .HasColumnType("bit");
 
                     b.Property<bool?>("EstIsUpdating")
                         .HasColumnType("bit");
@@ -524,9 +523,7 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstOtherBusNature")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstOwnerFirst")
                         .IsRequired()
@@ -549,7 +546,6 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("EstOwnerValidIDDateIssued")
-                        .HasMaxLength(50)
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstOwnerValidIDFile")
@@ -592,7 +588,7 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<DateTime?>("EstReopeningDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EstSECDateIssued")
+                    b.Property<DateTime?>("EstSECDateIssued")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstSECFile")
@@ -668,10 +664,6 @@ namespace asprule1020.DataAccess.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()

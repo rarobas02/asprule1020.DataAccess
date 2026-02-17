@@ -499,9 +499,8 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<bool?>("EstIsEmailReapplicationSent")
                         .HasColumnType("bit");
 
-                    b.Property<string>("EstIsPeza")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("EstIsPeza")
+                        .HasColumnType("bit");
 
                     b.Property<bool?>("EstIsUpdating")
                         .HasColumnType("bit");
@@ -521,9 +520,7 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstOtherBusNature")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstOwnerFirst")
                         .IsRequired()
@@ -546,7 +543,6 @@ namespace asprule1020.DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("EstOwnerValidIDDateIssued")
-                        .HasMaxLength(50)
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstOwnerValidIDFile")
@@ -589,7 +585,7 @@ namespace asprule1020.DataAccess.Migrations
                     b.Property<DateTime?>("EstReopeningDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EstSECDateIssued")
+                    b.Property<DateTime?>("EstSECDateIssued")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EstSECFile")
@@ -665,10 +661,6 @@ namespace asprule1020.DataAccess.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()

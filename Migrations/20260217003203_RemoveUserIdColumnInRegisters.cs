@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace asprule1020.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class AddPEZAinputInDb : Migration
+    public partial class RemoveUserIdColumnInRegisters : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,6 @@ namespace asprule1020.DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TransId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rule1020Id = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstPhone = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     EstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -50,7 +49,7 @@ namespace asprule1020.DataAccess.Migrations
                     EstCurrentCap = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstTotalAssets = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstBusinessNature = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstOtherBusNature = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    EstOtherBusNature = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstMaleCount = table.Column<int>(type: "int", nullable: false),
                     EstFemaleCount = table.Column<int>(type: "int", nullable: false),
                     EstTotalEmployees = table.Column<int>(type: "int", nullable: false),
@@ -60,13 +59,13 @@ namespace asprule1020.DataAccess.Migrations
                     EstTechInfo2Other = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EstChemSubstance = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstSECNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EstSECDateIssued = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EstSECDateIssued = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstBisPermitNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EstIsPeza = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EstIsPeza = table.Column<bool>(type: "bit", nullable: false),
                     EstBisPermitDateIssued = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstBisPermitValidityDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstOwnerValidIDNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EstOwnerValidIDDateIssued = table.Column<DateTime>(type: "datetime2", maxLength: 50, nullable: true),
+                    EstOwnerValidIDDateIssued = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstOwnerValidIDDateExpire = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstOwnerValidIDDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     EstSECFile = table.Column<string>(type: "nvarchar(max)", nullable: false),
