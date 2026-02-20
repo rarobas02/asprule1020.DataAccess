@@ -55,8 +55,6 @@ namespace BulkyBook.DataAccess.DbInitializer
                 {
                     UserName = "remarkrobas@gmail.com",
                     Email = "remarkrobas@gmail.com",
-                    EstUsername = "remarkrobas",
-                    EstName = "Remark Robas",
                     Role = SD.Role_Admin
                 }, "Admin@02").GetAwaiter().GetResult();
 
