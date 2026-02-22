@@ -12,8 +12,8 @@ using asprule1020.DataAccess.Data;
 namespace asprule1020.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260220133112_AddNameToUsersTable")]
-    partial class AddNameToUsersTable
+    [Migration("20260222150255_AddAdminUserToDb")]
+    partial class AddAdminUserToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

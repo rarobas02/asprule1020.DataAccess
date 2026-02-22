@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace asprule1020.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class RemoveUserIdColumnInRegisters : Migration
+    public partial class AddAdminUserToDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -212,9 +212,10 @@ namespace asprule1020.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    EstUsername = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstProvince = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EstProvince = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RegisterId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),

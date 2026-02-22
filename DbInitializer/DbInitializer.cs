@@ -48,19 +48,24 @@ namespace BulkyBook.DataAccess.DbInitializer
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Evaluator)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Region_Focal)).GetAwaiter().GetResult();
-                
-                //if roles are not created, then we will create admin user as well
-
-                _userManager.CreateAsync(new ApplicationUser
-                {
-                    UserName = "remarkrobas@gmail.com",
-                    Email = "remarkrobas@gmail.com",
-                    Role = SD.Role_Admin
-                }, "Admin@02").GetAwaiter().GetResult();
-
-                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "remarkrobas@gmail.com");
-                _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole(SD.Role_Po_Head)).GetAwaiter().GetResult();
             }
+            //if roles are not created, then we will create admin user as well
+
+            const string adminEmail = "remarkrobas@gmail.com";
+            var created = _userManager.CreateAsync(new ApplicationUser
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                FirstName = "Remark",
+                MiddleName = "Acuesta",
+                LastName = "Robas",
+                EstProvince = "Rizal",
+                Role = SD.Role_Admin
+            }, "Admin@02").GetAwaiter().GetResult();
+
+            var user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == adminEmail);
+            _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
             return;
 
         }
