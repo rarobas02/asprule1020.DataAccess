@@ -15,7 +15,6 @@ namespace asprule1020.DataAccess.Repository.IRepository
         IProvinceRepository Province { get; }  
         ICityMunRepository CityMunicipality { get; }
         IBarangayRepository Barangay { get; }
-        IApplicationUserRepository ApplicationUser { get; }
         void Save();
     }
 }

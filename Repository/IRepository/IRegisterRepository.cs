@@ -7,7 +7,8 @@ namespace asprule1020.DataAccess.Repository.IRepository
 {
     public interface IRegisterRepository: IRepository<Register>
     {
-            void Update(Register obj);
+            void UpdateEvaluator(Register obj);
+            void UpdatePoHead(Register obj);
             void Save();
     }
 }
