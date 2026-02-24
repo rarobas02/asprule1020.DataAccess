@@ -18,18 +18,18 @@ namespace asprule1020.DataAccess.Repository
         {
             _db.SaveChanges();
         }
-        public void UpdateEvaluator(Register obj)
+        public void UpdateEvaluator(Register changes, string evaluatorFullName)
         {
-            _db.Registers.Update(obj);
-            var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == obj.Id);
-            if (objFromDb != null)
-            {
-                objFromDb.EstEvalName = obj.EstEvalName;
-                objFromDb.EstEvalDate = obj.EstEvalDate;
-                objFromDb.EstEvalRemarks = obj.EstEvalRemarks;
-                objFromDb.EstEvalAssinged = obj.EstEvalAssinged;
-                objFromDb.EstStatus = obj.EstStatus;
-            }
+            var entity = _db.Registers.FirstOrDefault(u => u.Id == changes.Id);
+            if (entity == null) return;
+
+            entity.EstEvalName = string.IsNullOrWhiteSpace(evaluatorFullName)
+    ? entity.EstEvalName
+    : evaluatorFullName;
+            entity.EstEvalDate = DateTime.Now;
+            entity.EstEvalRemarks = changes.EstEvalRemarks;
+            entity.EstEvalAssinged = changes.EstEvalAssinged;
+            entity.EstStatus = changes.EstStatus;
         }
         public void UpdatePoHead(Register obj)
         {
