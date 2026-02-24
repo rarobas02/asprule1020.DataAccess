@@ -24,23 +24,24 @@ namespace asprule1020.DataAccess.Repository
             var entity = _db.Registers.FirstOrDefault(u => u.Id == changes.Id);
             if (entity == null) return;
 
-            entity.EstEvalName = string.IsNullOrWhiteSpace(evaluatorFullName)
-    ? entity.EstEvalName
-    : evaluatorFullName;
+            entity.EstEvalName = evaluatorFullName;
             entity.EstEvalDate = DateTime.Now;
             entity.EstEvalRemarks = changes.EstEvalRemarks;
             entity.EstEvalAssinged = SD.Role_Po_Head;
             entity.EstStatus = changes.EstStatus;
         }
-        public void UpdatePoHead(Register obj)
+        public void UpdatePoHead(Register obj, string evaluatorFullName)
         {
-            _db.Registers.Update(obj);
             var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == obj.Id);
             if (objFromDb != null)
             {
-                objFromDb.EstPoHeadName = obj.EstPoHeadName;
-                objFromDb.EstPoHeadEvalDate = obj.EstPoHeadEvalDate;
+                objFromDb.EstPoHeadName = evaluatorFullName;
+                objFromDb.EstPoHeadEvalDate = DateTime.Now;
                 objFromDb.EstPoHeadRemarks = obj.EstPoHeadRemarks;
+            }
+            else
+            {
+                return;
             }
         }
     }
