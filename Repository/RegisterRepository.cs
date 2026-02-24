@@ -4,6 +4,7 @@ using asprule1020.DataAccess.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using asprule1020.Utility;
 
 namespace asprule1020.DataAccess.Repository
 {
@@ -28,7 +29,7 @@ namespace asprule1020.DataAccess.Repository
     : evaluatorFullName;
             entity.EstEvalDate = DateTime.Now;
             entity.EstEvalRemarks = changes.EstEvalRemarks;
-            entity.EstEvalAssinged = changes.EstEvalAssinged;
+            entity.EstEvalAssinged = SD.Role_Po_Head;
             entity.EstStatus = changes.EstStatus;
         }
         public void UpdatePoHead(Register obj)
