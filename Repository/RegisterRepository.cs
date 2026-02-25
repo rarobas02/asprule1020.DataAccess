@@ -1,10 +1,11 @@
-﻿using asprule1020.DataAccess.Repository.IRepository;
+﻿using asprule1020.DataAccess.Data;
+using asprule1020.DataAccess.Repository.IRepository;
 using asprule1020.Models;
-using asprule1020.DataAccess.Data;
+using asprule1020.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using asprule1020.Utility;
+using System.Threading.Channels;
 
 namespace asprule1020.DataAccess.Repository
 {
@@ -38,6 +39,9 @@ namespace asprule1020.DataAccess.Repository
                 objFromDb.EstPoHeadName = evaluatorFullName;
                 objFromDb.EstPoHeadEvalDate = DateTime.Now;
                 objFromDb.EstPoHeadRemarks = obj.EstPoHeadRemarks;
+                objFromDb.EstEvalAssinged = SD.Role_Evaluator;
+                objFromDb.EstStatus = obj.EstStatus;
+
             }
             else
             {
