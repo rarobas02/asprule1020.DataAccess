@@ -9,6 +9,7 @@ namespace asprule1020.DataAccess.Repository.IRepository
     {
             void UpdateEvaluator(Register register, string evaluatorFullName);
             void UpdatePoHead(Register obj, string evaluatorFullName);
+            void UpdateClientDetails(Register obj, string evaluatorFullName);
             void Save();
     }
 }

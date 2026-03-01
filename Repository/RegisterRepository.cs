@@ -48,5 +48,32 @@ namespace asprule1020.DataAccess.Repository
                 return;
             }
         }
+        public void UpdateClientDetails(Register obj, string evaluatorFullName)
+        {
+            var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == obj.Id);
+            if (objFromDb != null)
+            {
+                objFromDb.EstName = obj.EstName;
+                objFromDb.EstRegion = obj.EstRegion;
+                objFromDb.EstProvince = obj.EstProvince;
+                objFromDb.EstCityMun = obj.EstCityMun;
+                objFromDb.EstBrgy = obj.EstBrgy;
+                objFromDb.EstStreet = obj.EstStreet;
+                objFromDb.EstOwnerFirst = obj.EstOwnerFirst;
+                objFromDb.EstOwnerMid = obj.EstOwnerMid;
+                objFromDb.EstOwnerLast = obj.EstOwnerLast;
+                objFromDb.EstMaleCount = obj.EstMaleCount;
+                objFromDb.EstFemaleCount = obj.EstFemaleCount;
+                objFromDb.EstTotalEmployees = obj.EstMaleCount + obj.EstFemaleCount;
+                objFromDb.EstTotalEmployees = obj.EstMaleCount + obj.EstFemaleCount;
+                objFromDb.EstEvalAssinged = SD.Role_Evaluator;
+                objFromDb.EstStatus = SD.StatusForReview;
+
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
