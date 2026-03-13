@@ -17,7 +17,7 @@ namespace asprule1020.DataAccess.Repository
         public IProvinceRepository Province { get; private set; }
         public ICityMunRepository CityMunicipality { get; private set; }
         public IBarangayRepository Barangay { get; private set; }
-        //public IUpdateRepository UpdateRegistration { get; private set; }
+        public IUpdateRepository UpdateRegistration { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -27,7 +27,7 @@ namespace asprule1020.DataAccess.Repository
             Province = new ProvinceRepository(_db);
             CityMunicipality = new CityMunRepository(_db);
             Barangay = new BarangayRepository(_db);
-            //UpdateRegistration = new IUpdateRepository(_db);
+            UpdateRegistration = new UpdateRepository(_db);
         }
 
         public void Save()
