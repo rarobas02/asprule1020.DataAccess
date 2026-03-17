@@ -12,7 +12,7 @@ using asprule1020.DataAccess.Data;
 namespace asprule1020.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260315135836_AddLaborUnionAndBranchToDb")]
+    [Migration("20260317123908_AddLaborUnionAndBranchToDb")]
     partial class AddLaborUnionAndBranchToDb
     {
         /// <inheritdoc />
@@ -241,6 +241,56 @@ namespace asprule1020.DataAccess.Migrations
                     b.HasIndex("RegisterId");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("asprule1020.Models.BranchUnit", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BranchAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BranchName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("RegisterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Rule1020Number")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegisterId");
+
+                    b.ToTable("BranchUnits");
+                });
+
+            modelBuilder.Entity("asprule1020.Models.LaborUnion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("RegisterId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UnionAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UnionBLR")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UnionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RegisterId");
+
+                    b.ToTable("LaborUnions");
                 });
 
             modelBuilder.Entity("asprule1020.Models.PhBarangay", b =>
@@ -736,6 +786,24 @@ namespace asprule1020.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("asprule1020.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("asprule1020.Models.Register", "Register")
+                        .WithMany()
+                        .HasForeignKey("RegisterId");
+
+                    b.Navigation("Register");
+                });
+
+            modelBuilder.Entity("asprule1020.Models.BranchUnit", b =>
+                {
+                    b.HasOne("asprule1020.Models.Register", "Register")
+                        .WithMany()
+                        .HasForeignKey("RegisterId");
+
+                    b.Navigation("Register");
+                });
+
+            modelBuilder.Entity("asprule1020.Models.LaborUnion", b =>
                 {
                     b.HasOne("asprule1020.Models.Register", "Register")
                         .WithMany()
