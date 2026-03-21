@@ -31,7 +31,7 @@ namespace asprule1020.DataAccess.Repository
             entity.EstEvalAssinged = SD.Role_Po_Head;
             entity.EstStatus = changes.EstStatus;
         }
-        public void UpdatePoHead(Register obj, string evaluatorFullName)
+        public void UpdatePoHead(Register obj, string evaluatorFullName,string rule1020Id)
         {
             var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == obj.Id);
             if (objFromDb != null)
@@ -41,6 +41,7 @@ namespace asprule1020.DataAccess.Repository
                 objFromDb.EstPoHeadRemarks = obj.EstPoHeadRemarks;
                 objFromDb.EstEvalAssinged = SD.Role_Evaluator;
                 objFromDb.EstStatus = obj.EstStatus;
+                objFromDb.Rule1020Id = rule1020Id;
 
             }
             else
