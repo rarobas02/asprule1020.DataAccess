@@ -3,13 +3,8 @@ using asprule1020.Models;
 using asprule1020.Utility;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BulkyBook.DataAccess.DbInitializer
+namespace asprule1020.DataAccess.DbInitializer
 {
     public class DbInitializer : IDbInitializer
     {
