@@ -9,21 +9,23 @@ using System.Threading.Channels;
 
 namespace asprule1020.DataAccess.Repository
 {
-    public class LaborUnionRepository : Repository<LaborUnion>, ILaborUnionRepository
+    public class BranchUnitRepository : Repository<BranchUnit>, IBranchUnitRepository
     {
         private readonly ApplicationDbContext _db;
-        public LaborUnionRepository(ApplicationDbContext db) : base(db)
+        public BranchUnitRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
-        public void UpdateLaborUnion(LaborUnion obj)
+
+        public void UpdateBranchUnit(BranchUnit obj)
         {
-            var entity = _db.LaborUnions.FirstOrDefault(u => u.Id == obj.Id);
+            var entity = _db.BranchUnits.FirstOrDefault(u => u.Id == obj.Id);
             if (entity == null)
                 return;
-            entity.UnionName = obj.UnionName;
-            entity.UnionBLR = obj.UnionBLR;
-            entity.UnionAddress = obj.UnionAddress;
+            entity.Rule1020Number = obj.Rule1020Number;
+            entity.BranchName = obj.BranchName;
+            entity.BranchAddress = obj.BranchAddress;
         }
+
     }
 }

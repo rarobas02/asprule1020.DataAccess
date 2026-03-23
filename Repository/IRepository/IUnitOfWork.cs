@@ -16,6 +16,8 @@ namespace asprule1020.DataAccess.Repository.IRepository
         ICityMunRepository CityMunicipality { get; }
         IBarangayRepository Barangay { get; }
         IUpdateRepository UpdateRegistration { get;  }
+        IBranchUnitRepository BranchUnit { get;  }
+        ILaborUnionRepository LaborUnion { get;  }
         void Save();
     }
 }

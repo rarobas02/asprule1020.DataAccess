@@ -5,10 +5,8 @@ using System.Text;
 
 namespace asprule1020.DataAccess.Repository.IRepository
 {
-    public interface ILaborUnionRepository
+    public interface ILaborUnionRepository : IRepository<LaborUnion>
     {
-        void AddLaborUnion(LaborUnion register);
-        void UpdateLaborUnion(Register register);
-        void DeleteLaborUnion(Register register);
+        void UpdateLaborUnion(LaborUnion laborUnion);
     }
 }
