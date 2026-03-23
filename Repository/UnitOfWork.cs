@@ -18,6 +18,8 @@ namespace asprule1020.DataAccess.Repository
         public ICityMunRepository CityMunicipality { get; private set; }
         public IBarangayRepository Barangay { get; private set; }
         public IUpdateRepository UpdateRegistration { get; private set; }
+        public ILaborUnionRepository LaborUnionRepository { get; private set; }
+        public IBranchUnitRepository BranchUnitRepository { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -28,6 +30,7 @@ namespace asprule1020.DataAccess.Repository
             CityMunicipality = new CityMunRepository(_db);
             Barangay = new BarangayRepository(_db);
             UpdateRegistration = new UpdateRepository(_db);
+            LaborUnion = new UpdateRepository(_db);
         }
 
         public void Save()
