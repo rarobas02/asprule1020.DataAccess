@@ -7,6 +7,6 @@ namespace asprule1020.DataAccess.Repository.IRepository
 {
     public interface ILaborUnionRepository : IRepository<LaborUnion>
     {
-        void UpdateLaborUnion(LaborUnion laborUnion);
+        void UpdateLaborUnion(Guid id, string UnionName, string UnionAddress, string UnionBLR);
     }
 }

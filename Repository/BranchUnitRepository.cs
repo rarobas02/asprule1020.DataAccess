@@ -17,14 +17,14 @@ namespace asprule1020.DataAccess.Repository
             _db = db;
         }
 
-        public void UpdateBranchUnit(BranchUnit obj)
+        public void UpdateBranchUnit(Guid Id,string rule1020Number, string branchName, string branchAddress)
         {
-            var entity = _db.BranchUnits.FirstOrDefault(u => u.Id == obj.Id);
+            var entity = _db.BranchUnits.FirstOrDefault(u => u.Id == Id);
             if (entity == null)
                 return;
-            entity.Rule1020Number = obj.Rule1020Number;
-            entity.BranchName = obj.BranchName;
-            entity.BranchAddress = obj.BranchAddress;
+            entity.Rule1020Number = rule1020Number;
+            entity.BranchName = branchName;
+            entity.BranchAddress = branchAddress;
         }
 
     }

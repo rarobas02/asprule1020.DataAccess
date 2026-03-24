@@ -7,6 +7,6 @@ namespace asprule1020.DataAccess.Repository.IRepository
 {
     public interface IBranchUnitRepository : IRepository<BranchUnit>
     {
-        void UpdateBranchUnit(BranchUnit branchUnit);
+        void UpdateBranchUnit(Guid Id, string rule1020Number, string branchName, string branchAddress);
     }
 }

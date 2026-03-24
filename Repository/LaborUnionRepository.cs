@@ -16,14 +16,14 @@ namespace asprule1020.DataAccess.Repository
         {
             _db = db;
         }
-        public void UpdateLaborUnion(LaborUnion obj)
+        public void UpdateLaborUnion(Guid id, string UnionName, string UnionAddress, string UnionBLR)
         {
-            var entity = _db.LaborUnions.FirstOrDefault(u => u.Id == obj.Id);
+            var entity = _db.LaborUnions.FirstOrDefault(u => u.Id == id);
             if (entity == null)
                 return;
-            entity.UnionName = obj.UnionName;
-            entity.UnionBLR = obj.UnionBLR;
-            entity.UnionAddress = obj.UnionAddress;
+            entity.UnionName = UnionName;
+            entity.UnionBLR = UnionBLR;
+            entity.UnionAddress = UnionAddress;
         }
     }
 }
