@@ -11,6 +11,8 @@ namespace asprule1020.DataAccess.Data
         {
         }
         public DbSet<Register> Registers { get; set; }
+        public DbSet<EvaluationChecklist> EvaluationChecklists { get; set; }
+        public DbSet<EvaluationRemarks> EvaluationRemarks { get; set; }
         public DbSet<PhRegion> PhRegions { get; set; }
         public DbSet<PhProvDist> PhProvDists { get; set; }
         public DbSet<PhCityMun> PhCityMuns { get; set; }
