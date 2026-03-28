@@ -7,11 +7,10 @@ using System.Text;
 
 namespace asprule1020.DataAccess.Repository
 {
-    public class EvaluationChecklistRepository : Repository<EvaluationChecklist>, IEvaluationChecklistRepository
+    public class EvaluationRemarkRepository : Repository<EvaluationRemark>, IEvaluationRemarkRepository
     {
         private ApplicationDbContext _db;
-
-        public EvaluationChecklistRepository(ApplicationDbContext db) : base(db)
+        public EvaluationRemarkRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }

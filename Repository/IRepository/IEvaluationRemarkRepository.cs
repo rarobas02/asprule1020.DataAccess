@@ -1,10 +1,11 @@
-﻿using System;
+﻿using asprule1020.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace asprule1020.DataAccess.Repository.IRepository
 {
-    public interface IEvaluationRemarksRepository
+    public interface IEvaluationRemarkRepository : IRepository<EvaluationRemark>
     {
     }
 }

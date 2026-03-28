@@ -20,6 +20,8 @@ namespace asprule1020.DataAccess.Repository
         public IUpdateRepository UpdateRegistration { get; private set; }
         public ILaborUnionRepository LaborUnion { get; private set; }
         public IBranchUnitRepository BranchUnit { get; private set; }
+        public IEvaluationChecklistRepository EvaluationChecklist { get; private set; }
+        public IEvaluationRemarkRepository EvaluationRemark { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -32,6 +34,8 @@ namespace asprule1020.DataAccess.Repository
             UpdateRegistration = new UpdateRepository(_db);
             LaborUnion = new LaborUnionRepository(_db);
             BranchUnit = new BranchUnitRepository(_db);
+            EvaluationChecklist = new EvaluationChecklistRepository(_db);
+            EvaluationRemark = new EvaluationRemarkRepository(_db);
         }
         public void Save()
         {

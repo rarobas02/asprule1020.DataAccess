@@ -18,6 +18,8 @@ namespace asprule1020.DataAccess.Repository.IRepository
         IUpdateRepository UpdateRegistration { get;  }
         IBranchUnitRepository BranchUnit { get;  }
         ILaborUnionRepository LaborUnion { get;  }
+        IEvaluationChecklistRepository EvaluationChecklist { get; }
+        IEvaluationRemarkRepository EvaluationRemark { get; }
         void Save();
     }
 }
