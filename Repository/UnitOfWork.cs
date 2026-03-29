@@ -22,6 +22,7 @@ namespace asprule1020.DataAccess.Repository
         public IBranchUnitRepository BranchUnit { get; private set; }
         public IEvaluationChecklistRepository EvaluationChecklist { get; private set; }
         public IEvaluationRemarkRepository EvaluationRemark { get; private set; }
+        public IApplicationUserRepository ApplicationUser { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
@@ -36,6 +37,7 @@ namespace asprule1020.DataAccess.Repository
             BranchUnit = new BranchUnitRepository(_db);
             EvaluationChecklist = new EvaluationChecklistRepository(_db);
             EvaluationRemark = new EvaluationRemarkRepository(_db);
+            ApplicationUser = new ApplicationUserRepository(_db);
         }
         public void Save()
         {

@@ -20,6 +20,7 @@ namespace asprule1020.DataAccess.Repository.IRepository
         ILaborUnionRepository LaborUnion { get;  }
         IEvaluationChecklistRepository EvaluationChecklist { get; }
         IEvaluationRemarkRepository EvaluationRemark { get; }
+        IApplicationUserRepository ApplicationUser { get; }
         void Save();
     }
 }
