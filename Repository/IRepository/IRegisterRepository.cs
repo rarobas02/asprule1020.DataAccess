@@ -10,6 +10,7 @@ namespace asprule1020.DataAccess.Repository.IRepository
             void UpdateEvaluator(Register register, string evaluatorFullName);
             void UpdatePoHead(Register obj, string evaluatorFullName, string rule1020Id);
             void UpdateClientDetails(Register obj, string evaluatorFullName);
+            void ApprovedEmailSendStatus(bool emailSendStatus, DateTime emailStatusSendDate, Guid id);
             void Save();
     }
 }

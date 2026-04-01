@@ -76,5 +76,18 @@ namespace asprule1020.DataAccess.Repository
                 return;
             }
         }
+        public void ApprovedEmailSendStatus(bool emailSendStatus, DateTime emailStatusSendDate, Guid id)
+        {
+            var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == id);
+            if (objFromDb != null)
+            {
+                objFromDb.EstIsEmailApprovedSent = emailSendStatus;
+                objFromDb.EstEmailApprovedSentDate = emailStatusSendDate;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

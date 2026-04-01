@@ -35,6 +35,7 @@ namespace asprule1020.DataAccess.DbInitializer
             }
             catch (Exception ex)
             {
+                throw new Exception(ex.Message);
             }
             // create roles - Admin, Evaluator, Client, Region Focal
             if (!_roleManager.RoleExistsAsync(SD.Role_Client).GetAwaiter().GetResult())
