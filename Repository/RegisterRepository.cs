@@ -89,5 +89,18 @@ namespace asprule1020.DataAccess.Repository
                 return;
             }
         }
+        public void ReapplicationEmailSendStatus(bool emailSendStatus, DateTime emailStatusSendDate, Guid id)
+        {
+            var objFromDb = _db.Registers.FirstOrDefault(u => u.Id == id);
+            if (objFromDb != null)
+            {
+                objFromDb.EstIsEmailReapplicationSent = emailSendStatus;
+                objFromDb.EstEmailReapplicationSentDate = emailStatusSendDate;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

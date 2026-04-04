@@ -11,6 +11,7 @@ namespace asprule1020.DataAccess.Repository.IRepository
             void UpdatePoHead(Register obj, string evaluatorFullName, string rule1020Id);
             void UpdateClientDetails(Register obj, string evaluatorFullName);
             void ApprovedEmailSendStatus(bool emailSendStatus, DateTime emailStatusSendDate, Guid id);
+        void ReapplicationEmailSendStatus(bool emailSendStatus, DateTime emailStatusSendDate, Guid id);
             void Save();
     }
 }
