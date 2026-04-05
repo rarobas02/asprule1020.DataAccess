@@ -1,11 +1,6 @@
 ﻿using asprule1020.DataAccess.Data;
 using asprule1020.DataAccess.Repository.IRepository;
 using asprule1020.Models;
-using asprule1020.Utility;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Channels;
 
 namespace asprule1020.DataAccess.Repository
 {
